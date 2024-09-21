@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from imp import load_source
+from importlib import load_source
 from os import path
 from sys import argv
 
