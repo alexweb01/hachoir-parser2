@@ -77,7 +77,7 @@ def main():
         use_setuptools = False
 
 
-    hachoir_parser = import_source_file("version", path.join("\hachoir_parser", "version.py"))
+    hachoir_parser = import_source_file(path.join("hachoir_parser", "version.py"), "version")
     PACKAGES = {"hachoir_parser": "hachoir_parser"}
     for name in MODULES:
         PACKAGES["hachoir_parser." + name] = "hachoir_parser/" + name
