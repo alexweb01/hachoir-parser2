@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import types
-from importlib import load_source
+from importlib import util
 from os import path
 from sys import argv
 
