@@ -2,7 +2,7 @@
 import types
 from importlib import util
 from os import path
-from sys import argv
+from sys import argv, modules
 
 # Procedure to release a new version:
 #  - edit hachoir_parser/version.py: __version__ = "XXX"
@@ -60,7 +60,7 @@ def import_source_file(fname: str | Path, modname: str) -> "types.ModuleType":
      if spec is None:
          raise ImportError(f"Could not load spec for module '{modname}' at: {fname}")
      module = util.module_from_spec(spec)
-     sys.modules[modname] = module
+     modules[modname] = module
      try:
          spec.loader.exec_module(module)
      except FileNotFoundError as e:
