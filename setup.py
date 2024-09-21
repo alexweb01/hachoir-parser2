@@ -56,10 +56,10 @@ def import_source_file(fname: str | Path, modname: str) -> "types.ModuleType":
              :exc:`SyntaxError).  These are errors made by the author of the module!
      """
      # https://docs.python.org/3/library/importlib.html#importing-a-source-file-directly
-     spec = importlib.util.spec_from_file_location(modname, fname)
+     spec = util.spec_from_file_location(modname, fname)
      if spec is None:
          raise ImportError(f"Could not load spec for module '{modname}' at: {fname}")
-     module = importlib.util.module_from_spec(spec)
+     module = util.module_from_spec(spec)
      sys.modules[modname] = module
      try:
          spec.loader.exec_module(module)
